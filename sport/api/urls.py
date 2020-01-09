@@ -1,11 +1,11 @@
 from django.urls import path, include
-from .views import UserViewSet, LeagueViewSet, SoccerLeagueViewSet
+from sport.api.views import UserViewSet, LeagueViewSet, SoccerLeagueViewSet, HockeyLeagueViewSet
 from rest_framework import routers
 
 router = routers.DefaultRouter()
-router.register(r'all', LeagueViewSet)
-router.register(r'users', UserViewSet)
-router.register(r'soccer', SoccerLeagueViewSet)
+router.register(r'all', LeagueViewSet, basename='all-leagues')
+router.register(r'soccer', SoccerLeagueViewSet, basename='soccer-leagues')
+router.register(r'hockey', HockeyLeagueViewSet, basename='hockey-leagues')
 
 urlpatterns = [
     path('', include(router.urls))

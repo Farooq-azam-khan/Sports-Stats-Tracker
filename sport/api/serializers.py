@@ -10,6 +10,12 @@ class LeagueSerializer(serializers.HyperlinkedModelSerializer):
         fields = ['name', 'sport']
 
 
+class SoccerLeagueSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = League
+        fields = ['name', 'sport']
+
+
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = User

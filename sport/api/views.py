@@ -1,5 +1,5 @@
 from rest_framework import viewsets
-from sport.api.serializers import UserSerializer, LeagueSerializer
+from sport.api.serializers import UserSerializer, LeagueSerializer, SoccerLeagueSerializer
 from sport.models import League
 from django.contrib.auth.models import User
 from rest_framework import generics
@@ -17,7 +17,15 @@ class SoccerLeagueViewSet(viewsets.ReadOnlyModelViewSet):
     """
     API endpoint that allows users to be viewed or edited.
     """
-    queryset = League.objects.filter(sport="soccer").all()
+    queryset = League.objects.filter(sport="soccer")
+    serializer_class = SoccerLeagueSerializer
+
+
+class HockeyLeagueViewSet(viewsets.ReadOnlyModelViewSet):
+    """
+    API endpoint that allows users to be viewed or edited.
+    """
+    queryset = League.objects.filter(sport="hockey").all()
     serializer_class = LeagueSerializer
 
 

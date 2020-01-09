@@ -26,9 +26,12 @@ from django.urls import include, path
 from django.contrib import admin
 from django.views.generic import TemplateView
 
+# from .api import
+
 urlpatterns = [
     path('', TemplateView.as_view(template_name='home.html')),
-    path('api/leagues/', include('sport.api.urls')),
+    # path('api/', include('sport_tracker.api')),
+    path('api/leagues/', include('sport.api.urls'), name='leauge-list'),
     path('api/teams/', include('team.api.urls')),
     path('api/players/', include('player.api.urls')),
     path('admin/', admin.site.urls),
