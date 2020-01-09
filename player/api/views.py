@@ -5,7 +5,7 @@ from player.models import Player
 
 class PlayerViewSet(viewsets.ReadOnlyModelViewSet):
     """
-    API endpoint that allows users to be viewed or edited.
+    API endpoint
     """
     queryset = Player.objects.all()
     serializer_class = PlayerSerializer

@@ -8,7 +8,7 @@ from sport.api.serializers import LeagueSerializer
 
 class LeagueViewSet(viewsets.ModelViewSet):
     """
-    API endpoint that allows users to be viewed or edited.
+    API endpoint
     """
     queryset = User.objects.all()
     serializer_class = LeagueSerializer
