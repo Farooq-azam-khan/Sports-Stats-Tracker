@@ -15,7 +15,7 @@ class BasketbalTeamlViewSet(viewsets.ReadOnlyModelViewSet):
     """
     API endpoint
     """
-    queryset = Team.objects.filter(league__sport='baskeltball').all()
+    queryset = Team.objects.filter(league__sport='basketball').all()
     serializer_class = TeamSerializer
 
 
