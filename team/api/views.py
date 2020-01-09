@@ -9,3 +9,32 @@ class TeamViewSet(viewsets.ReadOnlyModelViewSet):
     """
     queryset = Team.objects.all()
     serializer_class = TeamSerializer
+
+
+class BasketbalTeamlViewSet(viewsets.ReadOnlyModelViewSet):
+    """
+    API endpoint that allows users to be viewed or edited.
+    """
+    queryset = Team.objects.filter(league__sport='baskeltball').all()
+    serializer_class = TeamSerializer
+
+
+class HockeyTeamViewSet(viewsets.ReadOnlyModelViewSet):
+    """
+    API endpoint that allows users to be viewed or edited.
+    """
+    queryset = Team.objects.filter(league__sport='hockey').all()
+    serializer_class = TeamSerializer
+
+
+class SoccerTeamViewSet(viewsets.ReadOnlyModelViewSet):
+    """
+    API endpoint that allows users to be viewed or edited.
+    """
+    queryset = Team.objects.filter(league__sport='soccer').all()
+    serializer_class = TeamSerializer
+
+
+class PremierLeagueViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = Team.objects.filter(league__name="Premier League").all()
+    serializer_class = TeamSerializer
