@@ -38,4 +38,4 @@
 
 - used a restapi for django: https://www.django-rest-framework.org/#installation
 
-### Access
+* use `heroku pg` to check database records
